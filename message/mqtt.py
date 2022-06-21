@@ -1,7 +1,7 @@
 from asyncio.log import logger
 from contextlib import asynccontextmanager
 from message import Message
-from asyncio_mqtt import Client, MqttError
+from asyncio_mqtt import Client, MqttError, ProtocolVersion
 
 from util.util import replace_params
 
@@ -20,9 +20,9 @@ SUB_DEFAULT = {
 }
 
 class Mqtt(Message, Client):
-    def __init__(self, host, port=1883, username=None, password=None) -> None:
+    def __init__(self, host, port=1883, username=None, password=None, protocol=ProtocolVersion.V31) -> None:
         Message.__init__(self)
-        Client.__init__(self, host, port, username=username, password=password)
+        Client.__init__(self, host, port, username=username, password=password, protocol=protocol)
         
         self._status = False
 
