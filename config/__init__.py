@@ -11,7 +11,8 @@ def load_config(path: str) -> ConfigModel:
         logger.error(f"Failed loading config file from {path}")
         logger.error(e)
         exit(-1)
-
+    
+    logger.info(f"CONFIG ENV: {ret['ENV']}")
     return ConfigModel(ENV=ret['ENV'], **ret[ret['ENV']])
 
 

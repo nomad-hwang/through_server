@@ -1,9 +1,13 @@
 
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod, abstractproperty
 from contextlib import asynccontextmanager
 
 
-class Broker(ABC):
+class Message(ABC):
+    @abstractproperty
+    def connected(self):
+        pass
+
     @abstractmethod
     async def connect(self):
         pass
@@ -16,7 +20,6 @@ class Broker(ABC):
     async def publish(self, topic, message, *args, **kwargs):
         pass
 
-    @asynccontextmanager
     @abstractmethod
     async def subscribe(self, topic, *args, **kwargs):
         pass
