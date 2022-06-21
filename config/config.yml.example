@@ -1,11 +1,11 @@
 ENV: DEVELOPMENT
 
-- DEVELOPMENT:
-    - MQTT
-        - HOST: 127.0.0.1
-        - PORT: 1883
+DEVELOPMENT:
+  MQTT:
+    HOST: broker.hivemq.com
+    PORT: 1883
 
-- PRODUCTION:
-    - MQTT
-        - HOST: 127.0.0.1
-        - PORT: 1883
+PRODUCTION:
+  MQTT:
+    HOST: 127.0.0.1
+    PORT: 1883
