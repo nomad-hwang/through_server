@@ -1,0 +1,14 @@
+asyncio-mqtt==0.12.1
+docopt==0.6.2
+docutils==0.18.1
+lockfile==0.12.2
+loguru==0.6.0
+paho-mqtt==1.6.1
+passlib==1.7.4
+pydantic==1.9.1
+python-daemon==2.3.0
+PyYAML==6.0
+six==1.16.0
+transitions==0.8.11
+typing-extensions==4.2.0
+websockets==8.1
