@@ -4,14 +4,14 @@ from asyncio_mqtt import Client, MqttError
 from util.util import replace_params
 
 #  qos: 0: at most once, 1: at least once, 2: exactly once
-PUB_DEFAULT = {            
+PUB_DEFAULT = {
     'qos':          1,  
     'timeout':      10,
     'retain':       False,
     'properties':   None
 }
 
-SUB_DEFAULT = {            
+SUB_DEFAULT = {
     'qos':          0,
     'options':      None, 
     'properties':   None
@@ -29,9 +29,7 @@ class Mqtt(Broker, Client):
         await Client.disconnect(self)
 
     async def publish(self, topic, message, *args, **kwargs):
-        await Client.publish(topic, message, **replace_params(PUB_DEFAULT, **kwargs))
+        await Client.publish(self, topic, message, **replace_params(PUB_DEFAULT, **kwargs))
 
     async def subscribe(self, topic, *args, **kwargs):
-        await Client.subscribe(topic, **replace_params(SUB_DEFAULT, **kwargs))
-
-    
+        await Client.subscribe(self, topic, **replace_params(SUB_DEFAULT, **kwargs))
