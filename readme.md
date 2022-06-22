@@ -1,5 +1,7 @@
 ![Concept](concept.png)
 
+WIP - It does not work currently!
+
 # Software to create SSH Tunnel / VPN / ETC
 1. On Web UI, a user makes a request to create an SSH tunnel to Device A
     - Let's say port 22, 80
